@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const toggleTheme = () => {
+  document.body.classList.toggle("dark");
+};
+
 
   const handleLogout = () => {
     logout();
@@ -30,6 +34,8 @@ function Navbar() {
       }}
     >
       <h3 style={{ margin: 0 }}>Stitch House</h3>
+      <button onClick={toggleTheme}>Toggle Mode</button>
+
 
       <button
         onClick={handleLogout}
@@ -44,6 +50,7 @@ function Navbar() {
       >
         Logout
       </button>
+
     </div>
   );
 }

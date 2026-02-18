@@ -17,6 +17,11 @@ function History() {
         <Navbar />
         <h2>Completed Orders</h2>
 
+        {/* Static Box You Requested */}
+        <div className="card">
+          <p>Arun - Blazer - Rs.1200</p>
+        </div>
+
         {orders.map((o) => (
           <div key={o.id} className="card">
             {o.dress}

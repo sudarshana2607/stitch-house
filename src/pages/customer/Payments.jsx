@@ -21,7 +21,8 @@ function Payments() {
         id: Date.now(),
         orderId,
         amount,
-        status: "Paid"
+        status: "Paid",
+        date: new Date().toLocaleDateString()
       }
     ];
 
@@ -38,6 +39,7 @@ function Payments() {
         <Navbar />
         <h2>Make Payment</h2>
 
+        {/* Payment Form */}
         <div className="card">
           <input
             placeholder="Order ID"
@@ -51,6 +53,41 @@ function Payments() {
           />
           <button onClick={payNow}>Pay</button>
         </div>
+
+        {/* Payment History Section */}
+        <div className="table-section" style={{ marginTop: "30px" }}>
+          <h3>Payment History</h3>
+
+          {payments.length === 0 ? (
+            <p>TO : sri Tailors - Cloth : Size - Amount : 800 </p>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {payments.map((payment) => (
+                  <tr key={payment.id}>
+                    <td>{payment.orderId}</td>
+                    <td>₹ {payment.amount}</td>
+                    <td>{payment.date}</td>
+                    <td>
+                      <span className="status Completed">
+                        {payment.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+
       </div>
     </div>
   );
