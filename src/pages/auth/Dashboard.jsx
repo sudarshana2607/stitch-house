@@ -1,4 +1,3 @@
-// Full corrected Dashboard.js with external image example:
 import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
@@ -6,6 +5,10 @@ function Dashboard() {
 
   const handleLoginClick = () => {
     navigate("/login");
+  };
+
+  const handleRegisterClick = () => {
+    navigate("/register");
   };
 
   return (
@@ -16,7 +19,7 @@ function Dashboard() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: `url("https://c4.wallpaperflare.com/wallpaper/398/881/185/thread-sewing-yarn-wallpaper-preview.jpg")`, // Tailoring-themed image
+        backgroundImage: `url("https://c4.wallpaperflare.com/wallpaper/398/881/185/thread-sewing-yarn-wallpaper-preview.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -27,9 +30,12 @@ function Dashboard() {
       <h1 style={{ fontSize: "48px", marginBottom: "20px" }}>
         Welcome to Stitch House
       </h1>
+
       <p style={{ fontSize: "20px", marginBottom: "30px" }}>
         Explore our stitching & tailoring services
       </p>
+
+      {/* Login Button */}
       <button
         onClick={handleLoginClick}
         style={{
@@ -41,12 +47,33 @@ function Dashboard() {
           border: "none",
           borderRadius: "8px",
           cursor: "pointer",
-          transition: "0.3s"
+          transition: "0.3s",
+          marginBottom: "15px"
         }}
         onMouseOver={(e) => (e.target.style.opacity = "0.9")}
         onMouseOut={(e) => (e.target.style.opacity = "1")}
       >
         Go to Login
+      </button>
+
+      {/* Register Button (NEW) */}
+      <button
+        onClick={handleRegisterClick}
+        style={{
+          padding: "12px 30px",
+          fontSize: "18px",
+          fontWeight: "600",
+          color: "#1562dc",
+          background: "white",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          transition: "0.3s"
+        }}
+        onMouseOver={(e) => (e.target.style.opacity = "0.9")}
+        onMouseOut={(e) => (e.target.style.opacity = "1")}
+      >
+        Register
       </button>
     </div>
   );

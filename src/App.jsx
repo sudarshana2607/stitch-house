@@ -22,8 +22,9 @@ function App() {
   return (
     <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+
 
       {/* Tailor Routes */}
       <Route path="/tailor/dashboard" element={

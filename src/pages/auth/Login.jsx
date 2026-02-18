@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link} from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
@@ -177,6 +177,13 @@ function Login() {
           Login
         </button>
       </form>
+      <p style={{ marginTop: "15px", textAlign: "center", fontSize: "13px" }}>
+  Don't have an account?{" "}
+  <Link to="/register" style={{ color: "#ffffff", fontWeight: "600" }}>
+    Register
+  </Link>
+</p>
+
     </div>
   );
 }
